@@ -11,7 +11,7 @@ def load_prompt(name: str) -> str:
         str: プロンプトの内容
     """
     prompt_path = Path(__file__).parent / "prompts" / f"{name}.prompt"
-    return prompt_path.read_text().strip()
+    return prompt_path.read_text(encoding="utf-8").strip()
 
 
 def dict_to_xml_str(data: dict, exclude_keys: list[str] = []) -> str:

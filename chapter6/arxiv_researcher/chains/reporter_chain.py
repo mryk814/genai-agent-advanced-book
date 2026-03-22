@@ -51,8 +51,8 @@ if __name__ == "__main__":
     from arxiv_researcher.settings import settings
 
     reporter = Reporter(settings.reporter_llm)
-    with open("fixtures/sample_context.txt", "r") as f:
+    with open("fixtures/sample_context.txt", "r", encoding="utf-8") as f:
         context = f.read()
-    with open("fixtures/sample_goal.txt", "r") as f:
+    with open("fixtures/sample_goal.txt", "r", encoding="utf-8") as f:
         query = f.read()
     print(reporter.run(context, query))
